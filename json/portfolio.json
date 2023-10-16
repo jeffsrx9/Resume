@@ -1,0 +1,11 @@
+[
+  {
+    "image": "../json/images/Travel-Guide.png",
+    "title": "Travel-Guide",
+    "subTitle": "台灣旅遊景點導覽",
+    "dateTime": "2023-09-20",
+    "skill": "Vue 3|Vue Router|SCSS",
+    "decs": "使用 Vue 3 Composition API建置，資料來源為介接 TDX 運輸資料 API。",
+    "url": "https://jeffsrx9.github.io/Travel/"
+  }
+]

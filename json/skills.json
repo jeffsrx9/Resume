@@ -1,0 +1,8 @@
+{
+  "FrontEnd": [
+    "熟悉 HTML5、CSS3、 SCSS、ElementUI、Bootstrap，並製作RWD網頁。",
+    "透過 AJAX 取得資料，亦會使用 Promise 以及 async await 建立非同步運算程式，確保程式流程不會發生錯誤。",
+    "會使用 Vue2,3 等前端框架，並熟悉 Vue 的 Composition API 與 Option API 開發模式與兩者撰寫的差異，亦能夠使用 Vue Cli 搭配 Vue Router 獨立開發 SPA 網站。",
+    "使用 Export.js 與 Chart.js 呈現圖表與資料匯出。"
+  ]
+}

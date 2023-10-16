@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+<meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#415165" />
+  <title>Pin Wei's Personal Wbesite</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/global.min.css" />
+</head>
+
+<body x-data="xData">
+  <div id="loading" class="loading">
+    <div class="loading-effect">
+      <span class="loading-slice"></span>
+      <span class="loading-slice"></span>
+      <span class="loading-slice"></span>
+      <span class="loading-slice"></span>
+      <span class="loading-slice"></span>
+      <span class="loading-slice"></span>
+    </div>
+  </div>
+  <section id="top" class="top">
+    <nav>
+      <div class="container"></div>
+    </nav>
+    <div>
+      <div class="top_mouse">
+        <div class="top_mouseIn"></div>
+      </div>
+      <span class="top_arrow"></span>
+      <span class="top_arrow"></span>
+      <span class="top_arrow"></span>
+    </div>
+  </section>
+  <section class="banner"></section>
+  <section class="banner_text">
+    <p class="banner_text-sign">Who I Am</p>
+    <div>
+      <h1 class="banner_text-title">I'm Pin Wei Chen</h1>
+      <p class="banner_text-subTitle">Pin Wei's Personal Website</p>
+    </div>
+    <p class="banner_text-describe">了解關於Pin Wei Chen的經歷、技能與作品</p>
+  </section>
+  <nav id="navbar" class="navbar">
+    <div class="container">
+      <ul class="navbar-content">
+        <li><a href="#profile" class="navbar-item">自傳</a></li>
+        <li><a href="#portfolio" class="navbar-item">作品</a></li>
+        <li><a href="#skills" class="navbar-item">技能</a></li>
+        <li><a href="#experience" class="navbar-item">經歷</a></li>
+        <li><a href="#eduction" class="navbar-item">學歷</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section id="profile">
+    <h2 class="title">個人資料<span>PROFILE</span></h2>
+  <div class="profile">
+      <div class="profile-image">
+        <h3 class="profile-name">陳品維</h3>
+        <p>
+          熱愛 Coding 的前端工程師<br />
+          享受程式碼被渲染成精美的畫面的過程<br />
+          更會考慮跨平台畫面呈現，以最佳化使用者體驗<br />
+        </p>
+      </div>
+      <div class="profile-text">
+        <template x-if="profile">
+          <div class="profile-intro">
+            <template x-for="(item,idx) in profile">
+              <div>
+                <h4 class="profile-subTitle" :class="profileIdx === idx ? 'show' : ''" x-text="item.title"
+                  @click="profileIdx = idx"></h4>
+                <template x-for="txt in item.content">
+                  <p class="profile-desc" x-text="txt" x-show="profileIdx === idx"></p>
+                </template>
+              </div>
+            </template>
+          </div>
+        </template>
+        <ul class="profile-info">
+          <li>
+            <i class="icofont-calendar"></i>
+            <span>1996-05-10</span>
+          </li>
+          <li>
+            <i class="icofont-google-map"></i>
+            <span>PingTung, Taiwan</span>
+          </li>
+          <li>
+            <i class="icofont-email"></i>
+            <span>Email：</span>
+            <a href="mailto:jeff85510t@yahoo.com.tw">
+              jeff85510t@yahoo.com.tw
+            </a>
+          </li>
+          <li>
+            <i class="icofont-line-messenger"></i>
+            <span>Line：</span>
+            <a href="https://line.me/ti/p/mJROuIB34D" target="_blank">
+              ambulance6681
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="portfolio" class="cover">
+    <h2 class="title">作品集<span>PORTFOLIO</span></h2>
+    <div class="container">
+      <template x-if="portfolio">
+        <div class="portfolio">
+          <template x-for="(item,idx) in portfolio">
+            <div class="portfolio-item" x-show="idx < portfolioIdx*3">
+              <a :href="item.url" class="portfolio-link" target="_blank">
+                <div class="portfolio-image">
+                  <template x-if="item.image">
+                    <img :src="item.image" :alt="item.title" />
+                  </template>
+                  <template x-if="!item.image">
+                    <div class="ico"><i class="icofont-code"></i></div>
+                  </template>
+                  <div class="portfolio-hover">
+                    <div class="portfolio-hoverIcon">
+                      <i class="icofont-link-alt"></i>
+                    </div>
+                  </div>
+                  <h4 class="portfolio-title" x-text="item.title"></h4>
+                </div>
+              </a>
+              <h4 class="portfolio-subTitle" x-text="item.subTitle"></h4>
+              <p class="portfolio-dateTime" x-text="item.dateTime"></p>
+              <div class="portfolio-skills">
+                <template x-for="skill in item.skill.split('|')">
+                  <span :class="'portfolio-skill portfolio-skill-' + skill.replace(' ','')" x-text="skill"></span>
+                </template>
+              </div>
+              <p class="portfolio-decs" x-text="item.decs"></p>
+            </div>
+          </template>
+        </div>
+      </template>
+      <template x-if="portfolio && portfolio.length > portfolioIdx*3">
+        <div class="showMore">
+          <button class="showMore-btn" @click="portfolioIdx+=1;">
+            SHOW MORE
+          </button>
+        </div>
+      </template>
+    </div>
+  </section>
+  <section id="skills" class="skills">
+    <h2 class="title">專業技能<span>　SKILLS　</span></h2>
+    <template x-if="skills">
+      <div class="container">
+        <div class="skills-group">
+          <h3 class="skills-title">
+            <i class="icofont-code-alt"></i> 前端技能<span>FrontEnd</span>
+          </h3>
+          <ol class="skills-content">
+            <template x-for="(item,idx) in skills.FrontEnd">
+              <li x-text="item"></li>
+            </template>
+          </ol>
+        </div>
+    </template>
+  </section>
+  <section id="experience" class="cover">
+    <h2 class="title">工作經歷<span>EXPERIENCE</span></h2>
+    <template x-if="worksExp">
+      <ul class="container timeline">
+        <template x-for="(item,idx) in worksExp">
+          <li class="timeline-item">
+            <div class="timeline-icon"><i class="icofont-bag-alt"></i></div>
+            <template x-for="str in item.occupation">
+              <h3 class="timeline-title" x-text="str"></h3>
+            </template>
+            <h4 class="timeline-subTitle" x-text="item.firm"></h4>
+            <p class="timeline-text" x-text="item.period"></p>
+            <div class="timeline-intro worksExp">
+              <template x-for="str in item.introduce">
+                <p class="timeline-text" x-text="str"></p>
+              </template>
+              <div class="timeline-introCover worksExp"></div>
+              <template x-if="!item.show">
+                <button class="timeline-introBtn" @click="toggleIntro(idx)">
+                  More
+                </button>
+              </template>
+              <template x-if="item.show">
+                <button class="timeline-introBtn" @click="toggleIntro(idx)">
+                  Hide
+                </button>
+              </template>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </template>
+  </section>
+  <section id="eduction" class="cover">
+    <h2 class="title">學歷<span>EDUCTION</span></h2>
+    <ul class="container timeline">
+      <li class="timeline-item">
+        <div class="timeline-icon"><i class="icofont-hat-alt"></i></div>
+        <h3 class="timeline-title">正修科技大學</h3>
+        <h4 class="timeline-subTitle">電子工程系 學士學位</h4>
+        <p class="timeline-text">Sep. 2014 - Jun. 2018</p>
+      </li>
+    </ul>
+  </section>
+  <footer id="contact" class="contact">
+    <h2 class="contact_title">Contact Me On</h2>
+    <ul class="contact_list">
+      <li>
+        <a class="contact_list-item" href="mailto:jeff85510t@gmail.com">
+          <i class="icofont-email"></i>
+        </a>
+      </li>
+      <li>
+        <a class="contact_list-item" href="https://line.me/ti/p/mJROuIB34D" target="_blank">
+          <i class="icofont-line-messenger"></i>
+        </a>
+      </li>
+    </ul>
+    <p class="contact_reserved">Pin Wei Chen - All Rights Reserved © 2023</p>
+    <a class="contact_top" href="#top"><i class="icofont-swoosh-up"></i></a>
+  </footer>
+  <a class="goTop" href="#top"><i class="icofont-swoosh-up"></i></a>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
