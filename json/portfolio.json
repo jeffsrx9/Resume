@@ -1,6 +1,6 @@
 [
   {
-    "image": "../images/Travel-Guide.png",
+    "image": "./images/Travel-Guide.png",
     "title": "Travel-Guide",
     "subTitle": "台灣旅遊景點導覽",
     "dateTime": "2023-09-20",
