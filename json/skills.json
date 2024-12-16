@@ -1,8 +1,9 @@
 {
   "FrontEnd": [
-    "熟悉 HTML5、CSS3、 SCSS、ElementUI、Bootstrap，並製作RWD網頁。",
+    "熟悉 HTML5、CSS3、SCSS 等前端技術，並使用 ElementUI,Vant 和 Bootstrap...等開發各類介面。具備製作響應式設計（RWD）的能力，能適配各種尺寸的設備與螢幕需求，確保介面在不同平台上的一致性與優質的使用體驗。",
     "透過 AJAX 取得資料，亦會使用 Promise 以及 async await 建立非同步運算程式，確保程式流程不會發生錯誤。",
-    "會使用 Vue2,3 等前端框架，並熟悉 Vue 的 Composition API 與 Option API 開發模式與兩者撰寫的差異，亦能夠使用 Vue Cli 搭配 Vue Router 獨立開發 SPA 網站。",
-    "使用 Export.js 與 Chart.js 呈現圖表與資料匯出。"
+    "會使用 Vue2,3 等前端框架，並使用 Vue 的 Composition API 與 Option API 開發模式與兩者撰寫的差異，亦能夠使用 Vue Cli 搭配 Vue Router 獨立開發 SPA 網站。",
+    "使用 Export.js 與 Chart.js 來呈現動態圖表和進行資料匯出，能有效提升資料視覺化效果與操作便利性。其中，Chart.js 負責生成精美的圖表，提供直觀的數據展示，而 Export.js 則用於將資料匯出為多種格式，滿足不同應用場景的需求。",
+    "串接與優化各類動畫效果，確保動畫在不同設備和平台上的流暢度，為用戶提供良好的視覺體驗與互動感。通過精細的優化與調整，讓動畫不僅更加生動自然，也能提升產品的整體使用體驗與用戶滿意度。"
   ]
 }
